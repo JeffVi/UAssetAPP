@@ -11,6 +11,7 @@ namespace UAssetAPP.OT2.CommonDB
     public interface IUAssetDB
     {
         UAsset UAsset { get; }
+        List<string> dbItemNames { get; }
         int dbSize { get; }
 
         void UpdateAsset();

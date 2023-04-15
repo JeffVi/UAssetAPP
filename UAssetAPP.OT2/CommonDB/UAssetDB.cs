@@ -29,6 +29,8 @@ namespace UAssetAPP.OT2.CommonDB
 
         public int dbSize => data.Count;
 
+        public List<string> dbItemNames => names;
+
         private void ParseAsset()
         {
             data.Clear();
