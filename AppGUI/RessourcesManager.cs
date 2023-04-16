@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -70,6 +71,19 @@ namespace AppGUI
             {
                 case DatabaseType.AbilityData:
                     selectedAbility = abilityData?.GetAbility(index);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public static void UpdateItem()
+        {
+            switch (databaseType)
+            {
+                case DatabaseType.AbilityData:
+                    if (selectedAbility is not null)
+                        abilityData?.SetAbility(selectedAbility.Value);
                     break;
                 default:
                     break;
