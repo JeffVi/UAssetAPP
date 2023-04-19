@@ -41,6 +41,15 @@
             AbilityDataEnumLabel4 = new Label();
             AbilityDataEnumLabel5 = new Label();
             AbilityDataPannel = new Panel();
+            textBox1 = new TextBox();
+            AbiDatEOCLabel = new Label();
+            AbilityDataEnumBox6 = new ComboBox();
+            AbiDatEstimOrderLabel = new Label();
+            AbiDatAilmentNameComboBox = new ComboBox();
+            AbiDatActCmdSeqTextBox = new TextBox();
+            AbiDatCommandActorTextBox = new TextBox();
+            AbilityDataActSeqLabel = new Label();
+            AbilityDataCmdActLabel = new Label();
             AbiCheckUseAbilityCamera = new CheckBox();
             AbiCheckEnableAutoTameMonster = new CheckBox();
             AbiCheckDanceAbilityFlag = new CheckBox();
@@ -96,7 +105,6 @@
             AbiDisRatTextBox = new TextBox();
             AbiInvTurTextBox = new TextBox();
             AbiInvValTextBox = new TextBox();
-            AbiNameTextBox = new TextBox();
             ailmentLabel4 = new Label();
             ailmentLabel3 = new Label();
             ailmentLabel2 = new Label();
@@ -164,7 +172,7 @@
             ItemNameDB.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             ItemNameDB.AutoCompleteSource = AutoCompleteSource.ListItems;
             ItemNameDB.FormattingEnabled = true;
-            ItemNameDB.Location = new Point(310, 57);
+            ItemNameDB.Location = new Point(152, 57);
             ItemNameDB.Name = "ItemNameDB";
             ItemNameDB.Size = new Size(244, 23);
             ItemNameDB.TabIndex = 1;
@@ -173,7 +181,7 @@
             // AbilityDataEnumLabel1
             // 
             AbilityDataEnumLabel1.AutoSize = true;
-            AbilityDataEnumLabel1.Location = new Point(42, 55);
+            AbilityDataEnumLabel1.Location = new Point(13, 52);
             AbilityDataEnumLabel1.Name = "AbilityDataEnumLabel1";
             AbilityDataEnumLabel1.Size = new Size(72, 15);
             AbilityDataEnumLabel1.TabIndex = 2;
@@ -182,7 +190,7 @@
             // AbilityDataEnumLabel2
             // 
             AbilityDataEnumLabel2.AutoSize = true;
-            AbilityDataEnumLabel2.Location = new Point(42, 101);
+            AbilityDataEnumLabel2.Location = new Point(13, 98);
             AbilityDataEnumLabel2.Name = "AbilityDataEnumLabel2";
             AbilityDataEnumLabel2.Size = new Size(72, 15);
             AbilityDataEnumLabel2.TabIndex = 3;
@@ -191,7 +199,7 @@
             // AbilityDataEnumLabel3
             // 
             AbilityDataEnumLabel3.AutoSize = true;
-            AbilityDataEnumLabel3.Location = new Point(42, 147);
+            AbilityDataEnumLabel3.Location = new Point(13, 144);
             AbilityDataEnumLabel3.Name = "AbilityDataEnumLabel3";
             AbilityDataEnumLabel3.Size = new Size(72, 15);
             AbilityDataEnumLabel3.TabIndex = 4;
@@ -200,7 +208,7 @@
             // AbilityDataEnumLabel4
             // 
             AbilityDataEnumLabel4.AutoSize = true;
-            AbilityDataEnumLabel4.Location = new Point(42, 196);
+            AbilityDataEnumLabel4.Location = new Point(13, 193);
             AbilityDataEnumLabel4.Name = "AbilityDataEnumLabel4";
             AbilityDataEnumLabel4.Size = new Size(72, 15);
             AbilityDataEnumLabel4.TabIndex = 5;
@@ -209,7 +217,7 @@
             // AbilityDataEnumLabel5
             // 
             AbilityDataEnumLabel5.AutoSize = true;
-            AbilityDataEnumLabel5.Location = new Point(42, 245);
+            AbilityDataEnumLabel5.Location = new Point(13, 242);
             AbilityDataEnumLabel5.Name = "AbilityDataEnumLabel5";
             AbilityDataEnumLabel5.Size = new Size(72, 15);
             AbilityDataEnumLabel5.TabIndex = 6;
@@ -217,6 +225,15 @@
             // 
             // AbilityDataPannel
             // 
+            AbilityDataPannel.Controls.Add(textBox1);
+            AbilityDataPannel.Controls.Add(AbiDatEOCLabel);
+            AbilityDataPannel.Controls.Add(AbilityDataEnumBox6);
+            AbilityDataPannel.Controls.Add(AbiDatEstimOrderLabel);
+            AbilityDataPannel.Controls.Add(AbiDatAilmentNameComboBox);
+            AbilityDataPannel.Controls.Add(AbiDatActCmdSeqTextBox);
+            AbilityDataPannel.Controls.Add(AbiDatCommandActorTextBox);
+            AbilityDataPannel.Controls.Add(AbilityDataActSeqLabel);
+            AbilityDataPannel.Controls.Add(AbilityDataCmdActLabel);
             AbilityDataPannel.Controls.Add(AbiCheckUseAbilityCamera);
             AbilityDataPannel.Controls.Add(AbiCheckEnableAutoTameMonster);
             AbilityDataPannel.Controls.Add(AbiCheckDanceAbilityFlag);
@@ -272,7 +289,6 @@
             AbilityDataPannel.Controls.Add(AbiDisRatTextBox);
             AbilityDataPannel.Controls.Add(AbiInvTurTextBox);
             AbilityDataPannel.Controls.Add(AbiInvValTextBox);
-            AbilityDataPannel.Controls.Add(AbiNameTextBox);
             AbilityDataPannel.Controls.Add(ailmentLabel4);
             AbilityDataPannel.Controls.Add(ailmentLabel3);
             AbilityDataPannel.Controls.Add(ailmentLabel2);
@@ -290,8 +306,84 @@
             AbilityDataPannel.Controls.Add(AbilityDataEnumLabel3);
             AbilityDataPannel.Location = new Point(12, 86);
             AbilityDataPannel.Name = "AbilityDataPannel";
-            AbilityDataPannel.Size = new Size(1218, 550);
+            AbilityDataPannel.Size = new Size(1218, 595);
             AbilityDataPannel.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(1023, 448);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 83;
+            // 
+            // AbiDatEOCLabel
+            // 
+            AbiDatEOCLabel.AutoSize = true;
+            AbiDatEOCLabel.Location = new Point(902, 451);
+            AbiDatEOCLabel.Name = "AbiDatEOCLabel";
+            AbiDatEOCLabel.Size = new Size(115, 15);
+            AbiDatEOCLabel.TabIndex = 82;
+            AbiDatEOCLabel.Text = "EstimateOrderCount";
+            // 
+            // AbilityDataEnumBox6
+            // 
+            AbilityDataEnumBox6.DropDownStyle = ComboBoxStyle.DropDownList;
+            AbilityDataEnumBox6.FormattingEnabled = true;
+            AbilityDataEnumBox6.Location = new Point(754, 448);
+            AbilityDataEnumBox6.Name = "AbilityDataEnumBox6";
+            AbilityDataEnumBox6.Size = new Size(121, 23);
+            AbilityDataEnumBox6.TabIndex = 81;
+            // 
+            // AbiDatEstimOrderLabel
+            // 
+            AbiDatEstimOrderLabel.AutoSize = true;
+            AbiDatEstimOrderLabel.Location = new Point(644, 451);
+            AbiDatEstimOrderLabel.Name = "AbiDatEstimOrderLabel";
+            AbiDatEstimOrderLabel.Size = new Size(106, 15);
+            AbiDatEstimOrderLabel.TabIndex = 80;
+            AbiDatEstimOrderLabel.Text = "EstimateOrderType";
+            // 
+            // AbiDatAilmentNameComboBox
+            // 
+            AbiDatAilmentNameComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            AbiDatAilmentNameComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+            AbiDatAilmentNameComboBox.FormattingEnabled = true;
+            AbiDatAilmentNameComboBox.Location = new Point(300, 338);
+            AbiDatAilmentNameComboBox.Name = "AbiDatAilmentNameComboBox";
+            AbiDatAilmentNameComboBox.Size = new Size(244, 23);
+            AbiDatAilmentNameComboBox.TabIndex = 15;
+            // 
+            // AbiDatActCmdSeqTextBox
+            // 
+            AbiDatActCmdSeqTextBox.Location = new Point(197, 559);
+            AbiDatActCmdSeqTextBox.Name = "AbiDatActCmdSeqTextBox";
+            AbiDatActCmdSeqTextBox.Size = new Size(1001, 23);
+            AbiDatActCmdSeqTextBox.TabIndex = 79;
+            // 
+            // AbiDatCommandActorTextBox
+            // 
+            AbiDatCommandActorTextBox.Location = new Point(197, 526);
+            AbiDatCommandActorTextBox.Name = "AbiDatCommandActorTextBox";
+            AbiDatCommandActorTextBox.Size = new Size(1001, 23);
+            AbiDatCommandActorTextBox.TabIndex = 78;
+            // 
+            // AbilityDataActSeqLabel
+            // 
+            AbilityDataActSeqLabel.AutoSize = true;
+            AbilityDataActSeqLabel.Location = new Point(37, 562);
+            AbilityDataActSeqLabel.Name = "AbilityDataActSeqLabel";
+            AbilityDataActSeqLabel.Size = new Size(154, 15);
+            AbilityDataActSeqLabel.TabIndex = 77;
+            AbilityDataActSeqLabel.Text = "ActionCommandSequencer";
+            // 
+            // AbilityDataCmdActLabel
+            // 
+            AbilityDataCmdActLabel.AutoSize = true;
+            AbilityDataCmdActLabel.Location = new Point(98, 529);
+            AbilityDataCmdActLabel.Name = "AbilityDataCmdActLabel";
+            AbilityDataCmdActLabel.Size = new Size(93, 15);
+            AbilityDataCmdActLabel.TabIndex = 76;
+            AbilityDataCmdActLabel.Text = "CommandActor";
             // 
             // AbiCheckUseAbilityCamera
             // 
@@ -595,63 +687,63 @@
             // 
             // AbilityDataRandomCountMaxTextBox
             // 
-            AbilityDataRandomCountMaxTextBox.Location = new Point(544, 276);
+            AbilityDataRandomCountMaxTextBox.Location = new Point(516, 278);
             AbilityDataRandomCountMaxTextBox.Name = "AbilityDataRandomCountMaxTextBox";
             AbilityDataRandomCountMaxTextBox.Size = new Size(100, 23);
             AbilityDataRandomCountMaxTextBox.TabIndex = 45;
             // 
             // AbilityDataRandomCountMinTextBox
             // 
-            AbilityDataRandomCountMinTextBox.Location = new Point(544, 247);
+            AbilityDataRandomCountMinTextBox.Location = new Point(516, 249);
             AbilityDataRandomCountMinTextBox.Name = "AbilityDataRandomCountMinTextBox";
             AbilityDataRandomCountMinTextBox.Size = new Size(100, 23);
             AbilityDataRandomCountMinTextBox.TabIndex = 44;
             // 
             // AbilityDataMinimumCountTextBox
             // 
-            AbilityDataMinimumCountTextBox.Location = new Point(544, 218);
+            AbilityDataMinimumCountTextBox.Location = new Point(516, 220);
             AbilityDataMinimumCountTextBox.Name = "AbilityDataMinimumCountTextBox";
             AbilityDataMinimumCountTextBox.Size = new Size(100, 23);
             AbilityDataMinimumCountTextBox.TabIndex = 43;
             // 
             // AbilityDataBaseCountTextBox
             // 
-            AbilityDataBaseCountTextBox.Location = new Point(544, 189);
+            AbilityDataBaseCountTextBox.Location = new Point(516, 191);
             AbilityDataBaseCountTextBox.Name = "AbilityDataBaseCountTextBox";
             AbilityDataBaseCountTextBox.Size = new Size(100, 23);
             AbilityDataBaseCountTextBox.TabIndex = 42;
             // 
             // AbilityDataAbilityRatioTextBox
             // 
-            AbilityDataAbilityRatioTextBox.Location = new Point(544, 160);
+            AbilityDataAbilityRatioTextBox.Location = new Point(516, 162);
             AbilityDataAbilityRatioTextBox.Name = "AbilityDataAbilityRatioTextBox";
             AbilityDataAbilityRatioTextBox.Size = new Size(100, 23);
             AbilityDataAbilityRatioTextBox.TabIndex = 41;
             // 
             // AbilityDataCriticalPowerTextBox
             // 
-            AbilityDataCriticalPowerTextBox.Location = new Point(544, 131);
+            AbilityDataCriticalPowerTextBox.Location = new Point(516, 133);
             AbilityDataCriticalPowerTextBox.Name = "AbilityDataCriticalPowerTextBox";
             AbilityDataCriticalPowerTextBox.Size = new Size(100, 23);
             AbilityDataCriticalPowerTextBox.TabIndex = 40;
             // 
             // AbilityDataCriticalRatioTextBox
             // 
-            AbilityDataCriticalRatioTextBox.Location = new Point(544, 102);
+            AbilityDataCriticalRatioTextBox.Location = new Point(516, 104);
             AbilityDataCriticalRatioTextBox.Name = "AbilityDataCriticalRatioTextBox";
             AbilityDataCriticalRatioTextBox.Size = new Size(100, 23);
             AbilityDataCriticalRatioTextBox.TabIndex = 39;
             // 
             // AbilityDataHitRatioTextBox
             // 
-            AbilityDataHitRatioTextBox.Location = new Point(544, 73);
+            AbilityDataHitRatioTextBox.Location = new Point(516, 75);
             AbilityDataHitRatioTextBox.Name = "AbilityDataHitRatioTextBox";
             AbilityDataHitRatioTextBox.Size = new Size(100, 23);
             AbilityDataHitRatioTextBox.TabIndex = 38;
             // 
             // AbilityDataCostValueTextBox
             // 
-            AbilityDataCostValueTextBox.Location = new Point(544, 44);
+            AbilityDataCostValueTextBox.Location = new Point(516, 46);
             AbilityDataCostValueTextBox.Name = "AbilityDataCostValueTextBox";
             AbilityDataCostValueTextBox.Size = new Size(100, 23);
             AbilityDataCostValueTextBox.TabIndex = 37;
@@ -659,7 +751,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(426, 279);
+            label9.Location = new Point(398, 281);
             label9.Name = "label9";
             label9.Size = new Size(112, 15);
             label9.TabIndex = 36;
@@ -668,7 +760,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(426, 250);
+            label8.Location = new Point(398, 252);
             label8.Name = "label8";
             label8.Size = new Size(110, 15);
             label8.TabIndex = 35;
@@ -677,7 +769,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(426, 221);
+            label7.Location = new Point(398, 223);
             label7.Name = "label7";
             label7.Size = new Size(94, 15);
             label7.TabIndex = 34;
@@ -686,7 +778,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(426, 192);
+            label6.Location = new Point(398, 194);
             label6.Name = "label6";
             label6.Size = new Size(65, 15);
             label6.TabIndex = 33;
@@ -695,7 +787,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(426, 163);
+            label5.Location = new Point(398, 165);
             label5.Name = "label5";
             label5.Size = new Size(71, 15);
             label5.TabIndex = 32;
@@ -704,7 +796,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(426, 134);
+            label4.Location = new Point(398, 136);
             label4.Name = "label4";
             label4.Size = new Size(80, 15);
             label4.TabIndex = 31;
@@ -713,7 +805,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(426, 105);
+            label3.Location = new Point(398, 107);
             label3.Name = "label3";
             label3.Size = new Size(74, 15);
             label3.TabIndex = 30;
@@ -722,7 +814,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(426, 76);
+            label2.Location = new Point(398, 78);
             label2.Name = "label2";
             label2.Size = new Size(53, 15);
             label2.TabIndex = 29;
@@ -731,7 +823,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(426, 47);
+            label1.Location = new Point(398, 49);
             label1.Name = "label1";
             label1.Size = new Size(62, 15);
             label1.TabIndex = 28;
@@ -739,7 +831,7 @@
             // 
             // AbilityDataAilmentUpdateButton
             // 
-            AbilityDataAilmentUpdateButton.Location = new Point(312, 489);
+            AbilityDataAilmentUpdateButton.Location = new Point(288, 458);
             AbilityDataAilmentUpdateButton.Name = "AbilityDataAilmentUpdateButton";
             AbilityDataAilmentUpdateButton.Size = new Size(133, 23);
             AbilityDataAilmentUpdateButton.TabIndex = 27;
@@ -750,7 +842,7 @@
             // AbilityAilmentLabel
             // 
             AbilityAilmentLabel.AutoSize = true;
-            AbilityAilmentLabel.Location = new Point(84, 359);
+            AbilityAilmentLabel.Location = new Point(60, 328);
             AbilityAilmentLabel.Name = "AbilityAilmentLabel";
             AbilityAilmentLabel.Size = new Size(107, 15);
             AbilityAilmentLabel.TabIndex = 26;
@@ -758,7 +850,7 @@
             // 
             // AbilityAilmentButtonRemove
             // 
-            AbilityAilmentButtonRemove.Location = new Point(181, 485);
+            AbilityAilmentButtonRemove.Location = new Point(157, 454);
             AbilityAilmentButtonRemove.Name = "AbilityAilmentButtonRemove";
             AbilityAilmentButtonRemove.Size = new Size(75, 23);
             AbilityAilmentButtonRemove.TabIndex = 25;
@@ -768,7 +860,7 @@
             // 
             // AbilityAilmentButtonAdd
             // 
-            AbilityAilmentButtonAdd.Location = new Point(100, 485);
+            AbilityAilmentButtonAdd.Location = new Point(76, 454);
             AbilityAilmentButtonAdd.Name = "AbilityAilmentButtonAdd";
             AbilityAilmentButtonAdd.Size = new Size(75, 23);
             AbilityAilmentButtonAdd.TabIndex = 24;
@@ -778,7 +870,7 @@
             // 
             // AbiDisRatTextBox
             // 
-            AbiDisRatTextBox.Location = new Point(392, 456);
+            AbiDisRatTextBox.Location = new Point(368, 425);
             AbiDisRatTextBox.Name = "AbiDisRatTextBox";
             AbiDisRatTextBox.Size = new Size(100, 23);
             AbiDisRatTextBox.TabIndex = 23;
@@ -786,7 +878,7 @@
             // 
             // AbiInvTurTextBox
             // 
-            AbiInvTurTextBox.Location = new Point(392, 427);
+            AbiInvTurTextBox.Location = new Point(368, 396);
             AbiInvTurTextBox.Name = "AbiInvTurTextBox";
             AbiInvTurTextBox.Size = new Size(100, 23);
             AbiInvTurTextBox.TabIndex = 22;
@@ -794,24 +886,16 @@
             // 
             // AbiInvValTextBox
             // 
-            AbiInvValTextBox.Location = new Point(392, 398);
+            AbiInvValTextBox.Location = new Point(368, 367);
             AbiInvValTextBox.Name = "AbiInvValTextBox";
             AbiInvValTextBox.Size = new Size(100, 23);
             AbiInvValTextBox.TabIndex = 21;
             AbiInvValTextBox.Text = "Inv Val";
             // 
-            // AbiNameTextBox
-            // 
-            AbiNameTextBox.Location = new Point(355, 369);
-            AbiNameTextBox.Name = "AbiNameTextBox";
-            AbiNameTextBox.Size = new Size(137, 23);
-            AbiNameTextBox.TabIndex = 20;
-            AbiNameTextBox.Text = "Name";
-            // 
             // ailmentLabel4
             // 
             ailmentLabel4.AutoSize = true;
-            ailmentLabel4.Location = new Point(279, 459);
+            ailmentLabel4.Location = new Point(255, 428);
             ailmentLabel4.Name = "ailmentLabel4";
             ailmentLabel4.Size = new Size(72, 15);
             ailmentLabel4.TabIndex = 19;
@@ -820,7 +904,7 @@
             // ailmentLabel3
             // 
             ailmentLabel3.AutoSize = true;
-            ailmentLabel3.Location = new Point(279, 430);
+            ailmentLabel3.Location = new Point(255, 399);
             ailmentLabel3.Name = "ailmentLabel3";
             ailmentLabel3.Size = new Size(90, 15);
             ailmentLabel3.TabIndex = 18;
@@ -829,7 +913,7 @@
             // ailmentLabel2
             // 
             ailmentLabel2.AutoSize = true;
-            ailmentLabel2.Location = new Point(279, 401);
+            ailmentLabel2.Location = new Point(255, 370);
             ailmentLabel2.Name = "ailmentLabel2";
             ailmentLabel2.Size = new Size(94, 15);
             ailmentLabel2.TabIndex = 17;
@@ -838,7 +922,7 @@
             // ailmentLabel1
             // 
             ailmentLabel1.AutoSize = true;
-            ailmentLabel1.Location = new Point(279, 372);
+            ailmentLabel1.Location = new Point(255, 341);
             ailmentLabel1.Name = "ailmentLabel1";
             ailmentLabel1.Size = new Size(39, 15);
             ailmentLabel1.TabIndex = 16;
@@ -848,7 +932,7 @@
             // 
             AbilityAilmentListBox.FormattingEnabled = true;
             AbilityAilmentListBox.ItemHeight = 15;
-            AbilityAilmentListBox.Location = new Point(82, 377);
+            AbilityAilmentListBox.Location = new Point(58, 346);
             AbilityAilmentListBox.Name = "AbilityAilmentListBox";
             AbilityAilmentListBox.Size = new Size(191, 94);
             AbilityAilmentListBox.TabIndex = 15;
@@ -858,7 +942,7 @@
             // 
             AbilityDataEnumBox5.DropDownStyle = ComboBoxStyle.DropDownList;
             AbilityDataEnumBox5.FormattingEnabled = true;
-            AbilityDataEnumBox5.Location = new Point(197, 242);
+            AbilityDataEnumBox5.Location = new Point(168, 239);
             AbilityDataEnumBox5.Name = "AbilityDataEnumBox5";
             AbilityDataEnumBox5.Size = new Size(121, 23);
             AbilityDataEnumBox5.TabIndex = 11;
@@ -867,7 +951,7 @@
             // 
             AbilityDataEnumBox4.DropDownStyle = ComboBoxStyle.DropDownList;
             AbilityDataEnumBox4.FormattingEnabled = true;
-            AbilityDataEnumBox4.Location = new Point(197, 193);
+            AbilityDataEnumBox4.Location = new Point(168, 190);
             AbilityDataEnumBox4.Name = "AbilityDataEnumBox4";
             AbilityDataEnumBox4.Size = new Size(121, 23);
             AbilityDataEnumBox4.TabIndex = 10;
@@ -876,7 +960,7 @@
             // 
             AbilityDataEnumBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             AbilityDataEnumBox3.FormattingEnabled = true;
-            AbilityDataEnumBox3.Location = new Point(197, 144);
+            AbilityDataEnumBox3.Location = new Point(168, 141);
             AbilityDataEnumBox3.Name = "AbilityDataEnumBox3";
             AbilityDataEnumBox3.Size = new Size(121, 23);
             AbilityDataEnumBox3.TabIndex = 9;
@@ -885,7 +969,7 @@
             // 
             AbilityDataEnumBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             AbilityDataEnumBox2.FormattingEnabled = true;
-            AbilityDataEnumBox2.Location = new Point(197, 98);
+            AbilityDataEnumBox2.Location = new Point(168, 95);
             AbilityDataEnumBox2.Name = "AbilityDataEnumBox2";
             AbilityDataEnumBox2.Size = new Size(121, 23);
             AbilityDataEnumBox2.TabIndex = 8;
@@ -894,7 +978,7 @@
             // 
             AbilityDataEnumBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             AbilityDataEnumBox1.FormattingEnabled = true;
-            AbilityDataEnumBox1.Location = new Point(197, 52);
+            AbilityDataEnumBox1.Location = new Point(168, 49);
             AbilityDataEnumBox1.Name = "AbilityDataEnumBox1";
             AbilityDataEnumBox1.Size = new Size(121, 23);
             AbilityDataEnumBox1.TabIndex = 7;
@@ -902,7 +986,7 @@
             // SelectedItemLabel
             // 
             SelectedItemLabel.AutoSize = true;
-            SelectedItemLabel.Location = new Point(155, 60);
+            SelectedItemLabel.Location = new Point(12, 60);
             SelectedItemLabel.Name = "SelectedItemLabel";
             SelectedItemLabel.Size = new Size(78, 15);
             SelectedItemLabel.TabIndex = 8;
@@ -911,7 +995,7 @@
             // LoadedDatabaseLabel
             // 
             LoadedDatabaseLabel.AutoSize = true;
-            LoadedDatabaseLabel.Location = new Point(914, 60);
+            LoadedDatabaseLabel.Location = new Point(152, 24);
             LoadedDatabaseLabel.Name = "LoadedDatabaseLabel";
             LoadedDatabaseLabel.Size = new Size(63, 15);
             LoadedDatabaseLabel.TabIndex = 12;
@@ -919,7 +1003,7 @@
             // 
             // UpdateItemButton
             // 
-            UpdateItemButton.Location = new Point(579, 56);
+            UpdateItemButton.Location = new Point(402, 56);
             UpdateItemButton.Name = "UpdateItemButton";
             UpdateItemButton.Size = new Size(135, 23);
             UpdateItemButton.TabIndex = 13;
@@ -930,7 +1014,7 @@
             // UpdateLabel
             // 
             UpdateLabel.AutoSize = true;
-            UpdateLabel.Location = new Point(746, 60);
+            UpdateLabel.Location = new Point(543, 60);
             UpdateLabel.Name = "UpdateLabel";
             UpdateLabel.Size = new Size(76, 15);
             UpdateLabel.TabIndex = 14;
@@ -940,7 +1024,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1242, 648);
+            ClientSize = new Size(1242, 693);
             Controls.Add(UpdateLabel);
             Controls.Add(UpdateItemButton);
             Controls.Add(LoadedDatabaseLabel);
@@ -993,7 +1077,6 @@
         private TextBox AbiDisRatTextBox;
         private TextBox AbiInvTurTextBox;
         private TextBox AbiInvValTextBox;
-        private TextBox AbiNameTextBox;
         private Label AbilityAilmentLabel;
         private Button AbilityDataAilmentUpdateButton;
         private TextBox AbilityDataRandomCountMaxTextBox;
@@ -1044,5 +1127,14 @@
         private CheckBox AbiCheckExceptEnforcer;
         private CheckBox AbiCheckDependWeapon;
         private CheckBox AbiCheckAlwaysDisable;
+        private TextBox AbiDatActCmdSeqTextBox;
+        private TextBox AbiDatCommandActorTextBox;
+        private Label AbilityDataActSeqLabel;
+        private Label AbilityDataCmdActLabel;
+        private ComboBox AbiDatAilmentNameComboBox;
+        private ComboBox AbilityDataEnumBox6;
+        private Label AbiDatEstimOrderLabel;
+        private TextBox textBox1;
+        private Label AbiDatEOCLabel;
     }
 }

@@ -54,6 +54,17 @@ namespace UAssetAPP.OT2.DataBases.AbilityData
             EnumPropertyData abiCostType = (EnumPropertyData)abilityToUpdate[(int)AbilityPropertiesEnum.CostType];
             abiCostType.FromString(new string[] {CostTypeString.ENUM_TYPE, CostTypeString.AbilityTypeDic[ability.CostType] }, uAsset);
 
+            EnumPropertyData abiOrderType = (EnumPropertyData)abilityToUpdate[(int)AbilityPropertiesEnum.EstimateOrderType];
+            abiOrderType.FromString(new string[] { EstimateOrderTypeString.ENUM_TYPE, EstimateOrderTypeString.AbilityTypeDic[ability.EstimateOrderType] }, uAsset);
+
+            /***** String *****/
+
+            SoftObjectPropertyData abiComAct = (SoftObjectPropertyData)abilityToUpdate[(int)AbilityPropertiesEnum.CommandActor];
+            abiComAct.FromString(new string[] { ability.CommandActor, string.Empty }, uAsset);
+            
+            SoftObjectPropertyData abiActComSeq = (SoftObjectPropertyData)abilityToUpdate[(int)AbilityPropertiesEnum.ActionCommandSequencer];
+            abiActComSeq.FromString(new string[] { ability.ActionCommandSequencer, string.Empty }, uAsset);
+
             /***** Int *****/
 
             IntPropertyData abiCostValue = (IntPropertyData)abilityToUpdate[(int)AbilityPropertiesEnum.CostValue];
@@ -239,20 +250,23 @@ namespace UAssetAPP.OT2.DataBases.AbilityData
             invocTurn.FromString(new string[] { $"{abilityAilment.InvocationTurn}" }, uAsset);
             disRate.FromString(new string[] { $"{abilityAilment.DiseaseRate}" }, uAsset);
         }
-        /*
-        public List<string> GetEnumsValues()
+        
+        public List<string> GetAllAilmentNames()
         {
             var list = new List<string>();
 
             foreach (var propertyData in data)
             {
                 List<PropertyData> propertyDatas = (List<PropertyData>)propertyData.Value;
-                var name = (string)GetData(propertyDatas[(int)AbilityPropertiesEnum.EstimateOrderType]);
-                if (!list.Contains(name))
-                    list.Add(name);
+                foreach (PropertyData ailmentPropertyData in (List<PropertyData>)GetData(propertyDatas[(int)AbilityPropertiesEnum.Ailment]))
+                {
+                    var ailment = new Ailment((StructPropertyData)ailmentPropertyData);
+                    if (!list.Contains(ailment.Name))
+                        list.Add(ailment.Name);
+                }
             }
             return list;
         }
-        */
+        
     }
 }

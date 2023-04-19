@@ -11,10 +11,13 @@ namespace AppGUI
 {
     public static class RessourcesManager
     {
+        public static string? filePath = null;
+
         public static DatabaseType? databaseType = null;
 
         private static AbilityData? abilityData = null;
         public static Ability? selectedAbility = null;
+        public static List<string>? ailmentNamesList = null;
 
         public static List<string>? itemListDB;
         
@@ -26,6 +29,8 @@ namespace AppGUI
                     abilityData = new AbilityData(filename);
                     itemListDB = abilityData.dbItemNames;
                     databaseType = DatabaseType.AbilityData;
+                    filePath = filename;
+                    ailmentNamesList = abilityData.GetAllAilmentNames();
                     break;
                 default:
                     CloseFile();
@@ -60,9 +65,11 @@ namespace AppGUI
         public static void CloseFile()
         {
             databaseType = null;
+            filePath = null;
 
             abilityData = null;
             selectedAbility = null;
+            ailmentNamesList?.Clear();
         }
 
         public static void UpdateSelectedItem(int index)

@@ -23,7 +23,7 @@ namespace AppGUI
                     ItemNameDB.Enabled = true;
                     AbilityDataPannel.Visible = true;
                     SelectedItemLabel.Text = "Selected Ability";
-                    LoadedDatabaseLabel.Text = "AbilityData";
+                    LoadedDatabaseLabel.Text = RessourcesManager.filePath;
                     AbilityDataEnumBox1.Items.Clear();
                     UpdateItemButton.Enabled = true;
                     UpdateItemButton.Text = "Update ability";
@@ -41,6 +41,10 @@ namespace AppGUI
                     AbilityDataEnumBox5.Items.Clear();
                     AbilityDataEnumBox5.Items.AddRange(Enum.GetNames(typeof(CostTypeEnum)));
                     AbilityDataEnumLabel5.Text = CostTypeString.ENUM_TYPE;
+                    AbilityDataEnumBox6.Items.Clear();
+                    AbilityDataEnumBox6.Items.AddRange(Enum.GetNames(typeof(EstimateOrderTypeEnum)));
+                    AbiDatAilmentNameComboBox.Items.Clear();
+                    AbiDatAilmentNameComboBox.Items.AddRange(RessourcesManager.ailmentNamesList?.ToArray());
                     break;
                 default:
                     ItemNameDB.Items.Clear();
@@ -144,6 +148,9 @@ namespace AppGUI
                         AbilityDataRandomCountMinTextBox.Text = RessourcesManager.selectedAbility.Value.RandomCountMin.ToString();
                         AbilityDataRandomCountMaxTextBox.Text = RessourcesManager.selectedAbility.Value.RandomCountMax.ToString();
 
+                        AbiDatCommandActorTextBox.Text = RessourcesManager.selectedAbility.Value.CommandActor;
+                        AbiDatActCmdSeqTextBox.Text = RessourcesManager.selectedAbility.Value.ActionCommandSequencer;
+
                         AbiCheckAlwaysDisable.Checked = RessourcesManager.selectedAbility.Value.AlwaysDisable;
                         AbiCheckDependWeapon.Checked = RessourcesManager.selectedAbility.Value.DependWeapon;
                         AbiCheckExceptEnforcer.Checked = RessourcesManager.selectedAbility.Value.ExceptEnforcer;
@@ -180,6 +187,8 @@ namespace AppGUI
                         AbilityDataEnumBox3.SelectedIndex = (int)RessourcesManager.selectedAbility.Value.RestrictWeapon;
                         AbilityDataEnumBox4.SelectedIndex = (int)RessourcesManager.selectedAbility.Value.TargetType;
                         AbilityDataEnumBox5.SelectedIndex = (int)RessourcesManager.selectedAbility.Value.CostType;
+                        AbilityDataEnumBox6.SelectedIndex = (int)RessourcesManager.selectedAbility.Value.EstimateOrderType;
+
                         AbilityAilmentListBox.Items.Clear();
                         foreach (var ailment in RessourcesManager.selectedAbility.Value.AilmentsList)
                         {
@@ -188,6 +197,7 @@ namespace AppGUI
                         AbilityAilmentListBox.SelectedIndex = 0;
                         if (AbilityAilmentListBox.Items.Count <= 1)
                             AbilityAilmentButtonRemove.Enabled = false;
+                        AbiDatAilmentNameComboBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[0].Name;
                     }
                     break;
                 default:
@@ -197,6 +207,7 @@ namespace AppGUI
 
         private void UpdateItemButton_Click(object sender, EventArgs e)
         {
+            // Label will work in task, not the current priority, TODO
             UpdateLabel.Text = "Updating data, please wait...";
             UpdateItemButton.Enabled = false;
 
@@ -231,6 +242,9 @@ namespace AppGUI
                 newAbility.MinimumCount = int.Parse(AbilityDataMinimumCountTextBox.Text);
                 newAbility.RandomCountMin = int.Parse(AbilityDataRandomCountMinTextBox.Text);
                 newAbility.RandomCountMax = int.Parse(AbilityDataRandomCountMaxTextBox.Text);
+
+                newAbility.CommandActor = AbiDatCommandActorTextBox.Text;
+                newAbility.ActionCommandSequencer = AbiDatActCmdSeqTextBox.Text;
 
                 newAbility.AlwaysDisable = AbiCheckAlwaysDisable.Checked;
                 newAbility.DependWeapon = AbiCheckDependWeapon.Checked;
@@ -268,6 +282,7 @@ namespace AppGUI
                 newAbility.RestrictWeapon = (RestrictWeaponEnum)AbilityDataEnumBox3.SelectedIndex;
                 newAbility.TargetType = (TargetTypeEnum)AbilityDataEnumBox4.SelectedIndex;
                 newAbility.CostType = (CostTypeEnum)AbilityDataEnumBox5.SelectedIndex;
+                newAbility.EstimateOrderType = (EstimateOrderTypeEnum)AbilityDataEnumBox6.SelectedIndex;
 
                 RessourcesManager.selectedAbility = newAbility;
             }
@@ -282,7 +297,7 @@ namespace AppGUI
             if (RessourcesManager.selectedAbility is null)
                 return;
 
-            AbiNameTextBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[AbilityAilmentListBox.SelectedIndex].Name;
+            AbiDatAilmentNameComboBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[AbilityAilmentListBox.SelectedIndex].Name;
             AbiInvValTextBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[AbilityAilmentListBox.SelectedIndex].InvocationValue.ToString();
             AbiInvTurTextBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[AbilityAilmentListBox.SelectedIndex].InvocationTurn.ToString();
             AbiDisRatTextBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[AbilityAilmentListBox.SelectedIndex].DiseaseRate.ToString();
@@ -330,11 +345,18 @@ namespace AppGUI
             try
             {
                 Ailment newAilment = new Ailment();
-                newAilment.Name = AbiNameTextBox.Text;
+                newAilment.Name = AbiDatAilmentNameComboBox.Text;
                 newAilment.InvocationValue = int.Parse(AbiInvValTextBox.Text);
                 newAilment.InvocationTurn = int.Parse(AbiInvTurTextBox.Text);
                 newAilment.DiseaseRate = int.Parse(AbiDisRatTextBox.Text);
                 RessourcesManager.selectedAbility.Value.AilmentsList[index] = newAilment;
+
+                AbilityAilmentListBox.Items.Clear();
+                foreach (var ailment in RessourcesManager.selectedAbility.Value.AilmentsList)
+                {
+                    AbilityAilmentListBox.Items.Add(ailment.Name);
+                }
+                AbilityAilmentListBox.SelectedIndex = index;
             }
             catch (Exception ex)
             {
