@@ -41,7 +41,11 @@
             AbilityDataEnumLabel4 = new Label();
             AbilityDataEnumLabel5 = new Label();
             AbilityDataPannel = new Panel();
-            textBox1 = new TextBox();
+            AbilityDataDetailTextBox = new TextBox();
+            AbiDatDetailLabel = new Label();
+            AbilityDataDisplayNameTextBox = new TextBox();
+            AbiDatDisplNameLabel = new Label();
+            AbilityDataEstOrdCountTextBox = new TextBox();
             AbiDatEOCLabel = new Label();
             AbilityDataEnumBox6 = new ComboBox();
             AbiDatEstimOrderLabel = new Label();
@@ -119,8 +123,12 @@
             LoadedDatabaseLabel = new Label();
             UpdateItemButton = new Button();
             UpdateLabel = new Label();
+            GameTextPannel = new Panel();
+            GameTextRichBox = new RichTextBox();
+            GameTextLabel = new Label();
             menuStrip1.SuspendLayout();
             AbilityDataPannel.SuspendLayout();
+            GameTextPannel.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -225,7 +233,11 @@
             // 
             // AbilityDataPannel
             // 
-            AbilityDataPannel.Controls.Add(textBox1);
+            AbilityDataPannel.Controls.Add(AbilityDataDetailTextBox);
+            AbilityDataPannel.Controls.Add(AbiDatDetailLabel);
+            AbilityDataPannel.Controls.Add(AbilityDataDisplayNameTextBox);
+            AbilityDataPannel.Controls.Add(AbiDatDisplNameLabel);
+            AbilityDataPannel.Controls.Add(AbilityDataEstOrdCountTextBox);
             AbilityDataPannel.Controls.Add(AbiDatEOCLabel);
             AbilityDataPannel.Controls.Add(AbilityDataEnumBox6);
             AbilityDataPannel.Controls.Add(AbiDatEstimOrderLabel);
@@ -309,17 +321,49 @@
             AbilityDataPannel.Size = new Size(1218, 595);
             AbilityDataPannel.TabIndex = 7;
             // 
-            // textBox1
+            // AbilityDataDetailTextBox
             // 
-            textBox1.Location = new Point(1023, 448);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 83;
+            AbilityDataDetailTextBox.Location = new Point(935, 474);
+            AbilityDataDetailTextBox.Name = "AbilityDataDetailTextBox";
+            AbilityDataDetailTextBox.Size = new Size(178, 23);
+            AbilityDataDetailTextBox.TabIndex = 87;
+            // 
+            // AbiDatDetailLabel
+            // 
+            AbiDatDetailLabel.AutoSize = true;
+            AbiDatDetailLabel.Location = new Point(892, 474);
+            AbiDatDetailLabel.Name = "AbiDatDetailLabel";
+            AbiDatDetailLabel.Size = new Size(37, 15);
+            AbiDatDetailLabel.TabIndex = 86;
+            AbiDatDetailLabel.Text = "Detail";
+            // 
+            // AbilityDataDisplayNameTextBox
+            // 
+            AbilityDataDisplayNameTextBox.Location = new Point(690, 474);
+            AbilityDataDisplayNameTextBox.Name = "AbilityDataDisplayNameTextBox";
+            AbilityDataDisplayNameTextBox.Size = new Size(178, 23);
+            AbilityDataDisplayNameTextBox.TabIndex = 85;
+            // 
+            // AbiDatDisplNameLabel
+            // 
+            AbiDatDisplNameLabel.AutoSize = true;
+            AbiDatDisplNameLabel.Location = new Point(607, 477);
+            AbiDatDisplNameLabel.Name = "AbiDatDisplNameLabel";
+            AbiDatDisplNameLabel.Size = new Size(77, 15);
+            AbiDatDisplNameLabel.TabIndex = 84;
+            AbiDatDisplNameLabel.Text = "DisplayName";
+            // 
+            // AbilityDataEstOrdCountTextBox
+            // 
+            AbilityDataEstOrdCountTextBox.Location = new Point(1013, 425);
+            AbilityDataEstOrdCountTextBox.Name = "AbilityDataEstOrdCountTextBox";
+            AbilityDataEstOrdCountTextBox.Size = new Size(100, 23);
+            AbilityDataEstOrdCountTextBox.TabIndex = 83;
             // 
             // AbiDatEOCLabel
             // 
             AbiDatEOCLabel.AutoSize = true;
-            AbiDatEOCLabel.Location = new Point(902, 451);
+            AbiDatEOCLabel.Location = new Point(892, 428);
             AbiDatEOCLabel.Name = "AbiDatEOCLabel";
             AbiDatEOCLabel.Size = new Size(115, 15);
             AbiDatEOCLabel.TabIndex = 82;
@@ -329,15 +373,15 @@
             // 
             AbilityDataEnumBox6.DropDownStyle = ComboBoxStyle.DropDownList;
             AbilityDataEnumBox6.FormattingEnabled = true;
-            AbilityDataEnumBox6.Location = new Point(754, 448);
+            AbilityDataEnumBox6.Location = new Point(690, 425);
             AbilityDataEnumBox6.Name = "AbilityDataEnumBox6";
-            AbilityDataEnumBox6.Size = new Size(121, 23);
+            AbilityDataEnumBox6.Size = new Size(178, 23);
             AbilityDataEnumBox6.TabIndex = 81;
             // 
             // AbiDatEstimOrderLabel
             // 
             AbiDatEstimOrderLabel.AutoSize = true;
-            AbiDatEstimOrderLabel.Location = new Point(644, 451);
+            AbiDatEstimOrderLabel.Location = new Point(580, 428);
             AbiDatEstimOrderLabel.Name = "AbiDatEstimOrderLabel";
             AbiDatEstimOrderLabel.Size = new Size(106, 15);
             AbiDatEstimOrderLabel.TabIndex = 80;
@@ -388,7 +432,7 @@
             // AbiCheckUseAbilityCamera
             // 
             AbiCheckUseAbilityCamera.AutoSize = true;
-            AbiCheckUseAbilityCamera.Location = new Point(902, 404);
+            AbiCheckUseAbilityCamera.Location = new Point(910, 374);
             AbiCheckUseAbilityCamera.Name = "AbiCheckUseAbilityCamera";
             AbiCheckUseAbilityCamera.Size = new Size(159, 19);
             AbiCheckUseAbilityCamera.TabIndex = 75;
@@ -398,7 +442,7 @@
             // AbiCheckEnableAutoTameMonster
             // 
             AbiCheckEnableAutoTameMonster.AutoSize = true;
-            AbiCheckEnableAutoTameMonster.Location = new Point(902, 379);
+            AbiCheckEnableAutoTameMonster.Location = new Point(910, 349);
             AbiCheckEnableAutoTameMonster.Name = "AbiCheckEnableAutoTameMonster";
             AbiCheckEnableAutoTameMonster.Size = new Size(159, 19);
             AbiCheckEnableAutoTameMonster.TabIndex = 74;
@@ -408,7 +452,7 @@
             // AbiCheckDanceAbilityFlag
             // 
             AbiCheckDanceAbilityFlag.AutoSize = true;
-            AbiCheckDanceAbilityFlag.Location = new Point(902, 354);
+            AbiCheckDanceAbilityFlag.Location = new Point(910, 324);
             AbiCheckDanceAbilityFlag.Name = "AbiCheckDanceAbilityFlag";
             AbiCheckDanceAbilityFlag.Size = new Size(115, 19);
             AbiCheckDanceAbilityFlag.TabIndex = 73;
@@ -418,7 +462,7 @@
             // AbiCheckSongAbilityFlag
             // 
             AbiCheckSongAbilityFlag.AutoSize = true;
-            AbiCheckSongAbilityFlag.Location = new Point(902, 329);
+            AbiCheckSongAbilityFlag.Location = new Point(910, 299);
             AbiCheckSongAbilityFlag.Name = "AbiCheckSongAbilityFlag";
             AbiCheckSongAbilityFlag.Size = new Size(109, 19);
             AbiCheckSongAbilityFlag.TabIndex = 72;
@@ -428,7 +472,7 @@
             // AbiCheckEnableExcitement
             // 
             AbiCheckEnableExcitement.AutoSize = true;
-            AbiCheckEnableExcitement.Location = new Point(902, 304);
+            AbiCheckEnableExcitement.Location = new Point(910, 274);
             AbiCheckEnableExcitement.Name = "AbiCheckEnableExcitement";
             AbiCheckEnableExcitement.Size = new Size(120, 19);
             AbiCheckEnableExcitement.TabIndex = 71;
@@ -438,7 +482,7 @@
             // AbiCheckEnableCompensationMagic
             // 
             AbiCheckEnableCompensationMagic.AutoSize = true;
-            AbiCheckEnableCompensationMagic.Location = new Point(902, 279);
+            AbiCheckEnableCompensationMagic.Location = new Point(910, 249);
             AbiCheckEnableCompensationMagic.Name = "AbiCheckEnableCompensationMagic";
             AbiCheckEnableCompensationMagic.Size = new Size(172, 19);
             AbiCheckEnableCompensationMagic.TabIndex = 70;
@@ -448,7 +492,7 @@
             // AbiCheckEnableSwitchWeapon
             // 
             AbiCheckEnableSwitchWeapon.AutoSize = true;
-            AbiCheckEnableSwitchWeapon.Location = new Point(902, 254);
+            AbiCheckEnableSwitchWeapon.Location = new Point(910, 224);
             AbiCheckEnableSwitchWeapon.Name = "AbiCheckEnableSwitchWeapon";
             AbiCheckEnableSwitchWeapon.Size = new Size(140, 19);
             AbiCheckEnableSwitchWeapon.TabIndex = 69;
@@ -458,7 +502,7 @@
             // AbiCheckEnableNoUseMaterial
             // 
             AbiCheckEnableNoUseMaterial.AutoSize = true;
-            AbiCheckEnableNoUseMaterial.Location = new Point(902, 229);
+            AbiCheckEnableNoUseMaterial.Location = new Point(910, 199);
             AbiCheckEnableNoUseMaterial.Name = "AbiCheckEnableNoUseMaterial";
             AbiCheckEnableNoUseMaterial.Size = new Size(139, 19);
             AbiCheckEnableNoUseMaterial.TabIndex = 68;
@@ -468,7 +512,7 @@
             // AbiCheckEnableForceWeakness
             // 
             AbiCheckEnableForceWeakness.AutoSize = true;
-            AbiCheckEnableForceWeakness.Location = new Point(902, 204);
+            AbiCheckEnableForceWeakness.Location = new Point(910, 174);
             AbiCheckEnableForceWeakness.Name = "AbiCheckEnableForceWeakness";
             AbiCheckEnableForceWeakness.Size = new Size(142, 19);
             AbiCheckEnableForceWeakness.TabIndex = 67;
@@ -478,7 +522,7 @@
             // AbiCheckEnableBusinessSupport
             // 
             AbiCheckEnableBusinessSupport.AutoSize = true;
-            AbiCheckEnableBusinessSupport.Location = new Point(902, 179);
+            AbiCheckEnableBusinessSupport.Location = new Point(910, 149);
             AbiCheckEnableBusinessSupport.Name = "AbiCheckEnableBusinessSupport";
             AbiCheckEnableBusinessSupport.Size = new Size(148, 19);
             AbiCheckEnableBusinessSupport.TabIndex = 66;
@@ -488,7 +532,7 @@
             // AbiCheckEnableSession
             // 
             AbiCheckEnableSession.AutoSize = true;
-            AbiCheckEnableSession.Location = new Point(902, 154);
+            AbiCheckEnableSession.Location = new Point(910, 124);
             AbiCheckEnableSession.Name = "AbiCheckEnableSession";
             AbiCheckEnableSession.Size = new Size(100, 19);
             AbiCheckEnableSession.TabIndex = 65;
@@ -498,7 +542,7 @@
             // AbiCheckEnableNormalAttackAll
             // 
             AbiCheckEnableNormalAttackAll.AutoSize = true;
-            AbiCheckEnableNormalAttackAll.Location = new Point(902, 129);
+            AbiCheckEnableNormalAttackAll.Location = new Point(910, 99);
             AbiCheckEnableNormalAttackAll.Name = "AbiCheckEnableNormalAttackAll";
             AbiCheckEnableNormalAttackAll.Size = new Size(149, 19);
             AbiCheckEnableNormalAttackAll.TabIndex = 64;
@@ -508,7 +552,7 @@
             // AbiCheckEnableWeakCheckAll
             // 
             AbiCheckEnableWeakCheckAll.AutoSize = true;
-            AbiCheckEnableWeakCheckAll.Location = new Point(902, 104);
+            AbiCheckEnableWeakCheckAll.Location = new Point(910, 74);
             AbiCheckEnableWeakCheckAll.Name = "AbiCheckEnableWeakCheckAll";
             AbiCheckEnableWeakCheckAll.Size = new Size(137, 19);
             AbiCheckEnableWeakCheckAll.TabIndex = 63;
@@ -518,7 +562,7 @@
             // AbiCheckEnableChaseAttack
             // 
             AbiCheckEnableChaseAttack.AutoSize = true;
-            AbiCheckEnableChaseAttack.Location = new Point(902, 79);
+            AbiCheckEnableChaseAttack.Location = new Point(910, 49);
             AbiCheckEnableChaseAttack.Name = "AbiCheckEnableChaseAttack";
             AbiCheckEnableChaseAttack.Size = new Size(127, 19);
             AbiCheckEnableChaseAttack.TabIndex = 62;
@@ -528,7 +572,7 @@
             // AbiCheckEnableEnchant
             // 
             AbiCheckEnableEnchant.AutoSize = true;
-            AbiCheckEnableEnchant.Location = new Point(902, 54);
+            AbiCheckEnableEnchant.Location = new Point(910, 24);
             AbiCheckEnableEnchant.Name = "AbiCheckEnableEnchant";
             AbiCheckEnableEnchant.Size = new Size(104, 19);
             AbiCheckEnableEnchant.TabIndex = 61;
@@ -538,7 +582,7 @@
             // AbiCheckEnableDisableMagic
             // 
             AbiCheckEnableDisableMagic.AutoSize = true;
-            AbiCheckEnableDisableMagic.Location = new Point(754, 401);
+            AbiCheckEnableDisableMagic.Location = new Point(762, 371);
             AbiCheckEnableDisableMagic.Name = "AbiCheckEnableDisableMagic";
             AbiCheckEnableDisableMagic.Size = new Size(132, 19);
             AbiCheckEnableDisableMagic.TabIndex = 60;
@@ -548,7 +592,7 @@
             // AbiCheckEnableProvoke
             // 
             AbiCheckEnableProvoke.AutoSize = true;
-            AbiCheckEnableProvoke.Location = new Point(754, 376);
+            AbiCheckEnableProvoke.Location = new Point(762, 346);
             AbiCheckEnableProvoke.Name = "AbiCheckEnableProvoke";
             AbiCheckEnableProvoke.Size = new Size(104, 19);
             AbiCheckEnableProvoke.TabIndex = 59;
@@ -558,7 +602,7 @@
             // AbiCheckEnableCover
             // 
             AbiCheckEnableCover.AutoSize = true;
-            AbiCheckEnableCover.Location = new Point(754, 351);
+            AbiCheckEnableCover.Location = new Point(762, 321);
             AbiCheckEnableCover.Name = "AbiCheckEnableCover";
             AbiCheckEnableCover.Size = new Size(92, 19);
             AbiCheckEnableCover.TabIndex = 58;
@@ -568,7 +612,7 @@
             // AbiCheckEnableRepeat
             // 
             AbiCheckEnableRepeat.AutoSize = true;
-            AbiCheckEnableRepeat.Location = new Point(754, 326);
+            AbiCheckEnableRepeat.Location = new Point(762, 296);
             AbiCheckEnableRepeat.Name = "AbiCheckEnableRepeat";
             AbiCheckEnableRepeat.Size = new Size(97, 19);
             AbiCheckEnableRepeat.TabIndex = 57;
@@ -578,7 +622,7 @@
             // AbiCheckEnableHideOut
             // 
             AbiCheckEnableHideOut.AutoSize = true;
-            AbiCheckEnableHideOut.Location = new Point(754, 301);
+            AbiCheckEnableHideOut.Location = new Point(762, 271);
             AbiCheckEnableHideOut.Name = "AbiCheckEnableHideOut";
             AbiCheckEnableHideOut.Size = new Size(106, 19);
             AbiCheckEnableHideOut.TabIndex = 56;
@@ -588,7 +632,7 @@
             // AbiCheckEnableCounter
             // 
             AbiCheckEnableCounter.AutoSize = true;
-            AbiCheckEnableCounter.Location = new Point(754, 276);
+            AbiCheckEnableCounter.Location = new Point(762, 246);
             AbiCheckEnableCounter.Name = "AbiCheckEnableCounter";
             AbiCheckEnableCounter.Size = new Size(104, 19);
             AbiCheckEnableCounter.TabIndex = 55;
@@ -598,7 +642,7 @@
             // AbiCheckEnableReflection
             // 
             AbiCheckEnableReflection.AutoSize = true;
-            AbiCheckEnableReflection.Location = new Point(754, 251);
+            AbiCheckEnableReflection.Location = new Point(762, 221);
             AbiCheckEnableReflection.Name = "AbiCheckEnableReflection";
             AbiCheckEnableReflection.Size = new Size(114, 19);
             AbiCheckEnableReflection.TabIndex = 54;
@@ -608,7 +652,7 @@
             // AbiCheckEnableDiffusion
             // 
             AbiCheckEnableDiffusion.AutoSize = true;
-            AbiCheckEnableDiffusion.Location = new Point(754, 226);
+            AbiCheckEnableDiffusion.Location = new Point(762, 196);
             AbiCheckEnableDiffusion.Name = "AbiCheckEnableDiffusion";
             AbiCheckEnableDiffusion.Size = new Size(109, 19);
             AbiCheckEnableDiffusion.TabIndex = 53;
@@ -618,7 +662,7 @@
             // AbiCheckEnableConvergence
             // 
             AbiCheckEnableConvergence.AutoSize = true;
-            AbiCheckEnableConvergence.Location = new Point(754, 201);
+            AbiCheckEnableConvergence.Location = new Point(762, 171);
             AbiCheckEnableConvergence.Name = "AbiCheckEnableConvergence";
             AbiCheckEnableConvergence.Size = new Size(131, 19);
             AbiCheckEnableConvergence.TabIndex = 52;
@@ -628,7 +672,7 @@
             // AbiCheckEnableSkillAll
             // 
             AbiCheckEnableSkillAll.AutoSize = true;
-            AbiCheckEnableSkillAll.Location = new Point(754, 176);
+            AbiCheckEnableSkillAll.Location = new Point(762, 146);
             AbiCheckEnableSkillAll.Name = "AbiCheckEnableSkillAll";
             AbiCheckEnableSkillAll.Size = new Size(96, 19);
             AbiCheckEnableSkillAll.TabIndex = 51;
@@ -638,7 +682,7 @@
             // AbiCheckEnableItemAll
             // 
             AbiCheckEnableItemAll.AutoSize = true;
-            AbiCheckEnableItemAll.Location = new Point(754, 151);
+            AbiCheckEnableItemAll.Location = new Point(762, 121);
             AbiCheckEnableItemAll.Name = "AbiCheckEnableItemAll";
             AbiCheckEnableItemAll.Size = new Size(99, 19);
             AbiCheckEnableItemAll.TabIndex = 50;
@@ -648,7 +692,7 @@
             // AbiCheckKeepBoostEffect
             // 
             AbiCheckKeepBoostEffect.AutoSize = true;
-            AbiCheckKeepBoostEffect.Location = new Point(754, 126);
+            AbiCheckKeepBoostEffect.Location = new Point(762, 96);
             AbiCheckKeepBoostEffect.Name = "AbiCheckKeepBoostEffect";
             AbiCheckKeepBoostEffect.Size = new Size(112, 19);
             AbiCheckKeepBoostEffect.TabIndex = 49;
@@ -658,7 +702,7 @@
             // AbiCheckExceptEnforcer
             // 
             AbiCheckExceptEnforcer.AutoSize = true;
-            AbiCheckExceptEnforcer.Location = new Point(754, 101);
+            AbiCheckExceptEnforcer.Location = new Point(762, 71);
             AbiCheckExceptEnforcer.Name = "AbiCheckExceptEnforcer";
             AbiCheckExceptEnforcer.Size = new Size(105, 19);
             AbiCheckExceptEnforcer.TabIndex = 48;
@@ -668,7 +712,7 @@
             // AbiCheckDependWeapon
             // 
             AbiCheckDependWeapon.AutoSize = true;
-            AbiCheckDependWeapon.Location = new Point(754, 76);
+            AbiCheckDependWeapon.Location = new Point(762, 46);
             AbiCheckDependWeapon.Name = "AbiCheckDependWeapon";
             AbiCheckDependWeapon.Size = new Size(111, 19);
             AbiCheckDependWeapon.TabIndex = 47;
@@ -678,7 +722,7 @@
             // AbiCheckAlwaysDisable
             // 
             AbiCheckAlwaysDisable.AutoSize = true;
-            AbiCheckAlwaysDisable.Location = new Point(754, 51);
+            AbiCheckAlwaysDisable.Location = new Point(762, 21);
             AbiCheckAlwaysDisable.Name = "AbiCheckAlwaysDisable";
             AbiCheckAlwaysDisable.Size = new Size(101, 19);
             AbiCheckAlwaysDisable.TabIndex = 46;
@@ -1020,6 +1064,32 @@
             UpdateLabel.TabIndex = 14;
             UpdateLabel.Text = "Update Label";
             // 
+            // GameTextPannel
+            // 
+            GameTextPannel.Controls.Add(GameTextRichBox);
+            GameTextPannel.Controls.Add(GameTextLabel);
+            GameTextPannel.Location = new Point(12, 86);
+            GameTextPannel.Name = "GameTextPannel";
+            GameTextPannel.Size = new Size(1215, 595);
+            GameTextPannel.TabIndex = 15;
+            // 
+            // GameTextRichBox
+            // 
+            GameTextRichBox.Location = new Point(168, 74);
+            GameTextRichBox.Name = "GameTextRichBox";
+            GameTextRichBox.Size = new Size(480, 258);
+            GameTextRichBox.TabIndex = 1;
+            GameTextRichBox.Text = "";
+            // 
+            // GameTextLabel
+            // 
+            GameTextLabel.AutoSize = true;
+            GameTextLabel.Location = new Point(37, 67);
+            GameTextLabel.Name = "GameTextLabel";
+            GameTextLabel.Size = new Size(61, 15);
+            GameTextLabel.TabIndex = 0;
+            GameTextLabel.Text = "Game text";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1028,8 +1098,9 @@
             Controls.Add(UpdateLabel);
             Controls.Add(UpdateItemButton);
             Controls.Add(LoadedDatabaseLabel);
-            Controls.Add(SelectedItemLabel);
             Controls.Add(AbilityDataPannel);
+            Controls.Add(GameTextPannel);
+            Controls.Add(SelectedItemLabel);
             Controls.Add(ItemNameDB);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -1039,6 +1110,8 @@
             menuStrip1.PerformLayout();
             AbilityDataPannel.ResumeLayout(false);
             AbilityDataPannel.PerformLayout();
+            GameTextPannel.ResumeLayout(false);
+            GameTextPannel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1134,7 +1207,14 @@
         private ComboBox AbiDatAilmentNameComboBox;
         private ComboBox AbilityDataEnumBox6;
         private Label AbiDatEstimOrderLabel;
-        private TextBox textBox1;
+        private TextBox AbilityDataEstOrdCountTextBox;
         private Label AbiDatEOCLabel;
+        private Panel GameTextPannel;
+        private RichTextBox GameTextRichBox;
+        private Label GameTextLabel;
+        private TextBox AbilityDataDetailTextBox;
+        private Label AbiDatDetailLabel;
+        private TextBox AbilityDataDisplayNameTextBox;
+        private Label AbiDatDisplNameLabel;
     }
 }

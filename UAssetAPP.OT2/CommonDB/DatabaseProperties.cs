@@ -17,25 +17,35 @@ namespace UAssetAPP.OT2.CommonDB
             {
                 case DataType.NameProperty:
                     NamePropertyData nameData = (NamePropertyData)propertyData;
-                    return nameData.Value.Value.Value;
+                    return nameData.Value.Value.Value;  // Name as string
+
+                case DataType.TextProperty:
+                    TextPropertyData textData = (TextPropertyData)propertyData;
+                    return textData.CultureInvariantString; // TextPropertyData may be null
+
                 case DataType.EnumProperty:
                     EnumPropertyData enumData = (EnumPropertyData)propertyData;
                     return enumData.Value.Value.Value;
+
                 case DataType.BoolProperty:
                     BoolPropertyData boolData = (BoolPropertyData)propertyData;
                     return boolData.Value;
+
                 case DataType.IntProperty:
                     IntPropertyData intData = (IntPropertyData)propertyData;
                     return intData.Value;
+
                 case DataType.FloatProperty:
                     FloatPropertyData floatData = (FloatPropertyData)propertyData;
                     return floatData.Value;
+
                 case DataType.SoftObjectProperty:
                     SoftObjectPropertyData soData = (SoftObjectPropertyData)propertyData;
                     return soData.Value.AssetPathName.Value.Value;
+
                 case DataType.ArrayProperty:
                     ArrayPropertyData arrayData = (ArrayPropertyData)propertyData;
-                    return arrayData.Value.ToList();
+                    return arrayData.Value.ToList();    // List of strings
                 default:
                     throw new NotImplementedException();
             }
@@ -47,6 +57,8 @@ namespace UAssetAPP.OT2.CommonDB
             {
                 case "NameProperty":
                     return DataType.NameProperty;
+                case "TextProperty":
+                    return DataType.TextProperty;
                 case "EnumProperty":
                     return DataType.EnumProperty;
                 case "BoolProperty":
@@ -67,6 +79,7 @@ namespace UAssetAPP.OT2.CommonDB
         public enum DataType
         {
             NameProperty,
+            TextProperty,
             EnumProperty,
             BoolProperty,
             IntProperty,

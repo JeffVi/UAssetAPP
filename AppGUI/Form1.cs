@@ -12,6 +12,8 @@ namespace AppGUI
             SaveAsButton.Enabled = false;
             CloseButton.Enabled = false;
             UpdateLabel.Text = string.Empty;
+            AbilityDataPannel.Visible = false;
+            GameTextPannel.Visible = false;
             ManageElementsVisibility();
         }
 
@@ -20,8 +22,10 @@ namespace AppGUI
             switch (RessourcesManager.databaseType)
             {
                 case RessourcesManager.DatabaseType.AbilityData:
-                    ItemNameDB.Enabled = true;
                     AbilityDataPannel.Visible = true;
+                    GameTextPannel.Visible = false;
+
+                    ItemNameDB.Enabled = true;
                     SelectedItemLabel.Text = "Selected Ability";
                     LoadedDatabaseLabel.Text = RessourcesManager.filePath;
                     AbilityDataEnumBox1.Items.Clear();
@@ -46,11 +50,23 @@ namespace AppGUI
                     AbiDatAilmentNameComboBox.Items.Clear();
                     AbiDatAilmentNameComboBox.Items.AddRange(RessourcesManager.ailmentNamesList?.ToArray());
                     break;
+                case RessourcesManager.DatabaseType.GameText:
+                    AbilityDataPannel.Visible = false;
+                    GameTextPannel.Visible = true;
+
+                    ItemNameDB.Enabled = true;
+                    SelectedItemLabel.Text = "Selected Text";
+                    LoadedDatabaseLabel.Text = RessourcesManager.filePath;
+                    UpdateItemButton.Enabled = true;
+                    UpdateItemButton.Text = "Update text";
+                    break;
                 default:
+                    AbilityDataPannel.Visible = false;
+                    GameTextPannel.Visible = false;
+
                     ItemNameDB.Items.Clear();
                     ItemNameDB.Text = string.Empty;
                     ItemNameDB.Enabled = false;
-                    AbilityDataPannel.Visible = false;
                     SelectedItemLabel.Text = "Selected Item";
                     LoadedDatabaseLabel.Text = string.Empty;
                     UpdateItemButton.Enabled = false;
@@ -63,7 +79,7 @@ namespace AppGUI
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Unreal UAssets (AbilityData.uasset)|AbilityData.uasset|All files (*.*)|*.*";
+                openFileDialog.Filter = "Unreal UAssets (AbilityData;GameText)|AbilityData.uasset;GameText*.uasset|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
 
@@ -147,9 +163,12 @@ namespace AppGUI
                         AbilityDataMinimumCountTextBox.Text = RessourcesManager.selectedAbility.Value.MinimumCount.ToString();
                         AbilityDataRandomCountMinTextBox.Text = RessourcesManager.selectedAbility.Value.RandomCountMin.ToString();
                         AbilityDataRandomCountMaxTextBox.Text = RessourcesManager.selectedAbility.Value.RandomCountMax.ToString();
+                        AbilityDataEstOrdCountTextBox.Text = RessourcesManager.selectedAbility.Value.EstimateOrderCount.ToString();
 
                         AbiDatCommandActorTextBox.Text = RessourcesManager.selectedAbility.Value.CommandActor;
                         AbiDatActCmdSeqTextBox.Text = RessourcesManager.selectedAbility.Value.ActionCommandSequencer;
+                        AbilityDataDisplayNameTextBox.Text = RessourcesManager.selectedAbility.Value.DisplayName;
+                        AbilityDataDetailTextBox.Text = RessourcesManager.selectedAbility.Value.Detail;
 
                         AbiCheckAlwaysDisable.Checked = RessourcesManager.selectedAbility.Value.AlwaysDisable;
                         AbiCheckDependWeapon.Checked = RessourcesManager.selectedAbility.Value.DependWeapon;
@@ -200,6 +219,12 @@ namespace AppGUI
                         AbiDatAilmentNameComboBox.Text = RessourcesManager.selectedAbility.Value.AilmentsList[0].Name;
                     }
                     break;
+                case RessourcesManager.DatabaseType.GameText:
+                    if ((RessourcesManager.selectedGameText is not null) && (RessourcesManager.selectedGameText.Value.text is not null))
+                    {
+                        GameTextRichBox.Text = RessourcesManager.selectedGameText.Value.text;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -216,6 +241,9 @@ namespace AppGUI
                 case RessourcesManager.DatabaseType.AbilityData:
                     UpdateAbilityData();
                     break;
+                case RessourcesManager.DatabaseType.GameText:
+                    UpdateGameTextData();
+                    break;
                 default:
                     break;
             }
@@ -224,6 +252,8 @@ namespace AppGUI
             UpdateItemButton.Enabled = true;
             UpdateLabel.Text = string.Empty;
         }
+
+        #region AbilityData
 
         private void UpdateAbilityData()
         {
@@ -242,9 +272,12 @@ namespace AppGUI
                 newAbility.MinimumCount = int.Parse(AbilityDataMinimumCountTextBox.Text);
                 newAbility.RandomCountMin = int.Parse(AbilityDataRandomCountMinTextBox.Text);
                 newAbility.RandomCountMax = int.Parse(AbilityDataRandomCountMaxTextBox.Text);
+                newAbility.EstimateOrderCount = int.Parse(AbilityDataEstOrdCountTextBox.Text);
 
                 newAbility.CommandActor = AbiDatCommandActorTextBox.Text;
                 newAbility.ActionCommandSequencer = AbiDatActCmdSeqTextBox.Text;
+                newAbility.DisplayName = AbilityDataDisplayNameTextBox.Text;
+                newAbility.Detail = AbilityDataDetailTextBox.Text;
 
                 newAbility.AlwaysDisable = AbiCheckAlwaysDisable.Checked;
                 newAbility.DependWeapon = AbiCheckDependWeapon.Checked;
@@ -363,5 +396,27 @@ namespace AppGUI
                 MessageBox.Show($"Exception occured! {ex.Message}");
             }
         }
+
+        #endregion AbilityData
+
+        #region GameText
+
+        private void UpdateGameTextData()
+        {
+            if ((RessourcesManager.selectedGameText is null) || (RessourcesManager.selectedGameText.Value.name is null) || (RessourcesManager.selectedGameText.Value.text is null))
+                return;
+
+            try
+            {
+                (string name, string text) = (RessourcesManager.selectedGameText.Value.name, GameTextRichBox.Text);
+                RessourcesManager.selectedGameText = (name, text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Exception occured! {ex.Message}");
+            }
+        }
+
+        #endregion GameText
     }
 }

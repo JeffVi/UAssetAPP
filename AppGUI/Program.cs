@@ -1,4 +1,5 @@
 using UAssetAPP.OT2.DataBases.AbilityData;
+using UAssetAPP.OT2.DataBases.GameText;
 
 namespace AppGUI
 {
@@ -11,8 +12,7 @@ namespace AppGUI
         static void Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            // see https://aka.ms/applicationconfiguration.ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
     }
