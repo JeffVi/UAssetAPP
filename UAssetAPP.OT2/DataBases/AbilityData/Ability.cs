@@ -103,9 +103,9 @@ namespace UAssetAPP.OT2.DataBases.AbilityData
             EstimateOrderType = EstimateOrderTypeString.AbilityTypeDic.FirstOrDefault(x => x.Value == (string)GetData(propertyDatas[(int)AbilityPropertiesEnum.EstimateOrderType])).Key;
             EstimateOrderCount = (int)GetData(propertyDatas[(int)AbilityPropertiesEnum.EstimateOrderCount]);
             AilmentsList = new List<Ailment>();
-            foreach (PropertyData propertyData in (List<PropertyData>)GetData(propertyDatas[(int)AbilityPropertiesEnum.Ailment]))
+            foreach (StructPropertyData propertyData in (List<PropertyData>)GetData(propertyDatas[(int)AbilityPropertiesEnum.Ailment]))
             {
-                AilmentsList.Add(new Ailment((StructPropertyData)propertyData));
+                AilmentsList.Add(new Ailment(propertyData));
             }
             KeepBoostEffect = (bool)GetData(propertyDatas[(int)AbilityPropertiesEnum.KeepBoostEffect]);
             EnableItemAll = (bool)GetData(propertyDatas[(int)AbilityPropertiesEnum.EnableItemAll]);

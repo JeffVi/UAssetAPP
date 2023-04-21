@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UAssetAPI.PropertyTypes.Objects;
+using UAssetAPI.PropertyTypes.Structs;
 
 namespace UAssetAPP.OT2.CommonDB
 {
@@ -45,7 +46,12 @@ namespace UAssetAPP.OT2.CommonDB
 
                 case DataType.ArrayProperty:
                     ArrayPropertyData arrayData = (ArrayPropertyData)propertyData;
-                    return arrayData.Value.ToList();    // List of strings
+                    return arrayData.Value.ToList();    // List of PropertyData
+
+                case DataType.StructProperty:
+                    StructPropertyData structData = (StructPropertyData)propertyData;
+                    return structData.Value;     // List of PropertyData
+
                 default:
                     throw new NotImplementedException();
             }
@@ -71,6 +77,8 @@ namespace UAssetAPP.OT2.CommonDB
                     return DataType.SoftObjectProperty;
                 case "ArrayProperty":
                     return DataType.ArrayProperty;
+                case "StructProperty":
+                    return DataType.StructProperty;
                 default:
                     throw new NotImplementedException();
             }
@@ -86,6 +94,7 @@ namespace UAssetAPP.OT2.CommonDB
             FloatProperty,
             SoftObjectProperty,
             ArrayProperty,
+            StructProperty,
         }
     }
 }
