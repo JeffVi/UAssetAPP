@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using UAssetAPI.PropertyTypes.Objects;
 using UAssetAPI.PropertyTypes.Structs;
-using UAssetAPP.OT2.DataBases.AbilityData;
 using static UAssetAPP.OT2.CommonDB.DatabaseProperties;
 
 namespace UAssetAPP.OT2.DataBases.JobData

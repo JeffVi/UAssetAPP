@@ -136,6 +136,10 @@ namespace UAssetAPP.OT2.DataBases.AbilityData
             UseAbilityCamera = (bool)GetData(propertyDatas[(int)AbilityPropertiesEnum.UseAbilityCamera]);
             ActionCommandSequencer = (string)GetData(propertyDatas[(int)AbilityPropertiesEnum.ActionCommandSequencer]);
             AbilitySE = new List<string>();
+            foreach (NamePropertyData propertyData in (List<PropertyData>)GetData(propertyDatas[(int)AbilityPropertiesEnum.AbilitySE]))
+            {
+                AbilitySE.Add(propertyData.Value.Value.Value);
+            }
             SlideFrame = (int)GetData(propertyDatas[(int)AbilityPropertiesEnum.SlideFrame]);
         }
     }
