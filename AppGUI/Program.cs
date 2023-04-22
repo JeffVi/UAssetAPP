@@ -32,7 +32,7 @@ namespace AppGUI
             jobdata.SetJob(job);
             jobdata.SaveTo(@"C:\Users\JeffV\source\Repos\UAssetAPP\AppGUI\TestAssets\Output.uasset");
             */
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
