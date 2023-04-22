@@ -94,9 +94,9 @@ namespace UAssetAPP.OT2.DataBases.JobData
 
     public enum JobCommandAbilityParamEnum
     {
-        Locked_CostJP = 0,
-        Unlocked_FromStart = 1,
-        LockedDivine_UnlockLast = 2,
+        JP_Cost = 0,
+        Not_Locked = 1,
+        Unlock_Last = 2,
     }
 
     public struct JobSupportAbility

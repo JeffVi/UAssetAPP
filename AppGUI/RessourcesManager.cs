@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UAssetAPP.OT2.DataBases.AbilityData;
 using UAssetAPP.OT2.DataBases.GameText;
+using UAssetAPP.OT2.DataBases.JobData;
 
 namespace AppGUI
 {
@@ -22,6 +23,9 @@ namespace AppGUI
 
         private static GameText? gameText = null;
         public static (string? name, string? text)? selectedGameText = null;
+
+        private static JobData? jobData = null;
+        public static Job? selectedJob = null;
 
         public static List<string>? itemListDB;
         
@@ -60,6 +64,13 @@ namespace AppGUI
                     filePath = filename;
                     break;
 
+                case "JobData":
+                    jobData = new JobData(filename);
+                    itemListDB = jobData.dbItemNames;
+                    databaseType =DatabaseType.JobData;
+                    filePath = filename;
+                    break;
+
                 default:
                     break;
             }
@@ -75,6 +86,9 @@ namespace AppGUI
                 case DatabaseType.GameText:
                     gameText?.Save();
                     break;
+                case DatabaseType.JobData:
+                    jobData?.Save();
+                    break;
                 default:
                     break;
             }
@@ -89,6 +103,9 @@ namespace AppGUI
                     break;
                 case DatabaseType.GameText:
                     gameText?.SaveTo(filename);
+                    break;
+                case DatabaseType.JobData:
+                    jobData?.SaveTo(filename);
                     break;
                 default:
                     break;
@@ -106,6 +123,9 @@ namespace AppGUI
 
             gameText = null;
             selectedGameText = null;
+
+            jobData = null;
+            selectedJob = null;
         }
 
         public static void UpdateSelectedItem(int index)
@@ -117,6 +137,9 @@ namespace AppGUI
                     break;
                 case DatabaseType.GameText:
                     selectedGameText = (itemListDB?[index], gameText?.GetText(itemListDB?[index]));
+                    break;
+                case DatabaseType.JobData:
+                    selectedJob = jobData?.GetJob(index);
                     break;
                 default:
                     break;
@@ -135,6 +158,10 @@ namespace AppGUI
                     if ((selectedGameText is not null) && (selectedGameText.Value.name is not null) && (selectedGameText.Value.text is not null))
                         gameText?.SetText(selectedGameText.Value.name, selectedGameText.Value.text);
                     break;
+                case DatabaseType.JobData:
+                    if (selectedJob is not null)
+                        jobData?.SetJob(selectedJob.Value);
+                    break;
                 default:
                     break;
             }
@@ -144,6 +171,7 @@ namespace AppGUI
         {
             AbilityData,
             GameText,
+            JobData,
         }
     }
 }
