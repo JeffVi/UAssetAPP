@@ -7,6 +7,9 @@
     <Compile Update="UserControlPanels\AbilityDataUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControlPanels\EnemyDBUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControlPanels\GameTextUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

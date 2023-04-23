@@ -17,9 +17,7 @@ namespace AppGUI.UserControlPanels
         {
             InitializeComponent();
         }
-
-        #region AbilityData
-
+        
         public void InitItems()
         {
             AbilityDataEnumBox1.Items.Clear();
@@ -51,6 +49,7 @@ namespace AppGUI.UserControlPanels
             try
             {
                 Ability newAbility = RessourcesManager.selectedAbility.Value;
+
                 newAbility.CostValue = int.Parse(AbilityDataCostValueTextBox.Text);
                 newAbility.HitRatio = int.Parse(AbilityDataHitRatioTextBox.Text);
                 newAbility.CriticalRatio = int.Parse(AbilityDataCriticalRatioTextBox.Text);
@@ -261,7 +260,5 @@ namespace AppGUI.UserControlPanels
                 MessageBox.Show($"Exception occured! {ex.Message}");
             }
         }
-
-        #endregion AbilityData
     }
 }

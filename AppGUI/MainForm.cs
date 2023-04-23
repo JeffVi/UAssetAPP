@@ -14,6 +14,7 @@ namespace AppGUI
             UpdateLabel.Text = string.Empty;
             UCAbilityData.Visible = false;
             UCGameText.Visible = false;
+            UCEnemyDB.Visible = false;
             ManageElementsVisibility();
         }
 
@@ -25,6 +26,7 @@ namespace AppGUI
                     UCAbilityData.Visible = true;
                     UCGameText.Visible = false;
                     UCJobData.Visible = false;
+                    UCEnemyDB.Visible = false;
 
                     ItemNameDB.Enabled = true;
                     SelectedItemLabel.Text = "Selected Ability";
@@ -39,6 +41,7 @@ namespace AppGUI
                     UCAbilityData.Visible = false;
                     UCGameText.Visible = true;
                     UCJobData.Visible = false;
+                    UCEnemyDB.Visible = false;
 
                     ItemNameDB.Enabled = true;
                     SelectedItemLabel.Text = "Selected Text";
@@ -53,6 +56,7 @@ namespace AppGUI
                     UCAbilityData.Visible = false;
                     UCGameText.Visible = false;
                     UCJobData.Visible = true;
+                    UCEnemyDB.Visible = false;
 
                     ItemNameDB.Enabled = true;
                     SelectedItemLabel.Text = "Selected Job";
@@ -63,10 +67,26 @@ namespace AppGUI
                     UCJobData.InitItems();
                     break;
 
+                case RessourcesManager.DatabaseType.EnemyDB:
+                    UCAbilityData.Visible = false;
+                    UCGameText.Visible = false;
+                    UCJobData.Visible = false;
+                    UCEnemyDB.Visible = true;
+
+                    ItemNameDB.Enabled = true;
+                    SelectedItemLabel.Text = "Selected Enemy";
+                    LoadedDatabaseLabel.Text = RessourcesManager.filePath;
+                    UpdateItemButton.Enabled = true;
+                    UpdateItemButton.Text = "Update enemy";
+
+                    UCEnemyDB.InitItems();
+                    break;
+
                 default:
                     UCAbilityData.Visible = false;
                     UCGameText.Visible = false;
                     UCJobData.Visible = false;
+                    UCEnemyDB.Visible = false;
 
                     ItemNameDB.Items.Clear();
                     ItemNameDB.Text = string.Empty;
@@ -83,7 +103,7 @@ namespace AppGUI
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Unreal UAssets (AbilityData;GameText;JobData)|AbilityData.uasset;GameText*.uasset;JobData.uasset|All files (*.*)|*.*";
+                openFileDialog.Filter = "Unreal UAssets (AbilityData;GameText;JobData;EnemyDB)|AbilityData.uasset;GameText*.uasset;JobData.uasset;EnemyDB.uasset|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
 
@@ -125,6 +145,9 @@ namespace AppGUI
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
+                openFileDialog.Filter = "Unreal UAssets (.uasset)|*.uasset|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     try
@@ -167,6 +190,10 @@ namespace AppGUI
                     UCJobData.ItemNameDB_SelectedIndexChanged(sender, e);
                     break;
 
+                case RessourcesManager.DatabaseType.EnemyDB:
+                    UCEnemyDB.ItemNameDB_SelectedIndexChanged(sender, e);
+                    break;
+
                 default:
                     break;
             }
@@ -188,8 +215,12 @@ namespace AppGUI
                     UCGameText.UpdateItemData();
                     break;
 
-                case RessourcesManager .DatabaseType.JobData:
+                case RessourcesManager.DatabaseType.JobData:
                     UCJobData.UpdateItemData();
+                    break;
+
+                case RessourcesManager.DatabaseType.EnemyDB:
+                    UCEnemyDB.UpdateItemData();
                     break;
 
                 default:

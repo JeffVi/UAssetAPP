@@ -42,6 +42,7 @@
             UCAbilityData = new UserControlPanels.AbilityDataUC();
             UCGameText = new UserControlPanels.GameTextUC();
             UCJobData = new UserControlPanels.JobDataUC();
+            UCEnemyDB = new UserControlPanels.EnemyDBUC();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,7 +159,14 @@
             UCJobData.Size = new Size(1200, 625);
             UCJobData.TabIndex = 19;
             // 
-            // Form1
+            // UCEnemyDB
+            // 
+            UCEnemyDB.Location = new Point(30, 90);
+            UCEnemyDB.Name = "UCEnemyDB";
+            UCEnemyDB.Size = new Size(1200, 625);
+            UCEnemyDB.TabIndex = 20;
+            // 
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -166,6 +174,7 @@
             Controls.Add(UCAbilityData);
             Controls.Add(UCGameText);
             Controls.Add(UCJobData);
+            Controls.Add(UCEnemyDB);
             Controls.Add(UpdateLabel);
             Controls.Add(UpdateItemButton);
             Controls.Add(LoadedDatabaseLabel);
@@ -173,7 +182,7 @@
             Controls.Add(ItemNameDB);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Octopath Traveler 2 UAsset Editor";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -197,5 +206,6 @@
         private UserControlPanels.AbilityDataUC UCAbilityData;
         private UserControlPanels.GameTextUC UCGameText;
         private UserControlPanels.JobDataUC UCJobData;
+        private UserControlPanels.EnemyDBUC UCEnemyDB;
     }
 }

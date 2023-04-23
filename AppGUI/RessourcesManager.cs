@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UAssetAPP.OT2.DataBases.AbilityData;
+using UAssetAPP.OT2.DataBases.EnemyDB;
 using UAssetAPP.OT2.DataBases.GameText;
 using UAssetAPP.OT2.DataBases.JobData;
 
@@ -26,6 +27,9 @@ namespace AppGUI
 
         private static JobData? jobData = null;
         public static Job? selectedJob = null;
+
+        private static EnemyDB? enemyDB = null;
+        public static Enemy? selectedEnemy = null;
 
         public static List<string>? itemListDB;
         
@@ -67,7 +71,14 @@ namespace AppGUI
                 case "JobData":
                     jobData = new JobData(filename);
                     itemListDB = jobData.dbItemNames;
-                    databaseType =DatabaseType.JobData;
+                    databaseType = DatabaseType.JobData;
+                    filePath = filename;
+                    break;
+
+                case "EnemyDB":
+                    enemyDB = new EnemyDB(filename);
+                    itemListDB = enemyDB.dbItemNames;
+                    databaseType = DatabaseType.EnemyDB;
                     filePath = filename;
                     break;
 
@@ -89,6 +100,9 @@ namespace AppGUI
                 case DatabaseType.JobData:
                     jobData?.Save();
                     break;
+                case DatabaseType.EnemyDB:
+                    enemyDB?.Save();
+                    break;
                 default:
                     break;
             }
@@ -106,6 +120,9 @@ namespace AppGUI
                     break;
                 case DatabaseType.JobData:
                     jobData?.SaveTo(filename);
+                    break;
+                case DatabaseType.EnemyDB:
+                    enemyDB?.SaveTo(filename);
                     break;
                 default:
                     break;
@@ -126,6 +143,9 @@ namespace AppGUI
 
             jobData = null;
             selectedJob = null;
+
+            enemyDB = null;
+            selectedEnemy = null;
         }
 
         public static void UpdateSelectedItem(int index)
@@ -140,6 +160,9 @@ namespace AppGUI
                     break;
                 case DatabaseType.JobData:
                     selectedJob = jobData?.GetJob(index);
+                    break;
+                case DatabaseType.EnemyDB:
+                    selectedEnemy = enemyDB?.GetEnemy(index);
                     break;
                 default:
                     break;
@@ -162,6 +185,10 @@ namespace AppGUI
                     if (selectedJob is not null)
                         jobData?.SetJob(selectedJob.Value);
                     break;
+                case DatabaseType.EnemyDB:
+                    if (selectedEnemy is not null)
+                        enemyDB?.SetEnemy(selectedEnemy.Value);
+                    break;
                 default:
                     break;
             }
@@ -172,6 +199,7 @@ namespace AppGUI
             AbilityData,
             GameText,
             JobData,
+            EnemyDB,
         }
     }
 }
