@@ -400,6 +400,44 @@ namespace UAssetAPP.OT2.DataBases.EnemyDB
         AGI = 12,
     }
 
+    public enum EnemyWeaponResistEnum
+    {
+        Sword = 0,
+        Spear = 1,
+        Dagger = 2,
+        Axe = 3,
+        Bow = 4,
+        Staff = 5,
+        UNKNOWN = 6,
+    }
+
+    public enum EnemyAttributeResistEnum
+    {
+        UNKNOWN = 0,
+        Fire = 1,
+        Ice = 2,
+        Lightning = 3,
+        Wind = 4,
+        Light = 5,
+        Dark = 6,
+    }
+
+    public enum EnemyDiseaseResistEnum
+    {
+        Poison = 0,
+        Silence = 1,
+        Blindness = 2,
+        Confusion = 3,
+        Sleep = 4,
+        Terror = 5,
+        Unconsciousness = 6,
+        InstantDeath = 7,
+        Petrification = 8,
+        UNKNOWN_1 = 9,
+        UNKNOWN_2 = 10,
+        UNKNOWN_3 = 11,
+    }
+
     public enum EnemyPropertiesEnum
     {
         EnemyID = 0,
